@@ -14,7 +14,7 @@ p {
 }
 
 .img-auto {
-    max-width: 100%; /* Imagem responsiva */
+    max-width: 80%; /* Imagem responsiva */
     border-radius: 4px; /* Bordas arredondadas */
     margin-bottom: 15px; /* Espaçamento abaixo da imagem */
 }
@@ -28,8 +28,18 @@ button {
     font-size: 1em; /* Tamanho do texto do botão */
     cursor: pointer; /* Cursor de ponteiro */
     transition: background-color 0.3s; /* Transição suave para o fundo */
+    margin-right: 10px; /* Espaçamento entre os botões */
 }
 
 button:hover {
     background-color: #357ABD; /* Cor ao passar o mouse */
+}
+
+/* Estilos específicos para o botão "Favoritar" */
+button.favoritar {
+    background-color: #FF5722; /* Cor de fundo do botão "Favoritar" */
+}
+
+button.favoritar:hover {
+    background-color: #E64A19; /* Cor ao passar o mouse */
 }
