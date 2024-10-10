@@ -18,14 +18,31 @@
 
 nav {
     display: flex;
+    align-items: center; /* Alinhamento vertical dos itens do menu */
     gap: 15px; /* Espaçamento entre os itens do menu */
 }
 
 nav span {
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
     transition: color 0.2s; /* Transição suave de cor */
+    position: relative; /* Para posicionamento do ícone de favoritos */
+}
+
+nav .favorites-icon {
+    display: flex; /* Flexbox para o coração e o contador */
+    align-items: center; /* Alinhamento vertical */
+    color: white; /* Cor do ícone de favoritos */
+}
+
+nav .favorites-icon span {
+    margin-left: 5px; /* Espaçamento entre o coração e o contador */
+    font-weight: bold; /* Destaque para o contador */
 }
 
 nav span:hover {
     color: #FFC107; /* Cor ao passar o mouse */
+}
+
+nav .favorites-icon:hover {
+    color: #FFC107; /* Cor ao passar o mouse no ícone de favoritos */
 }

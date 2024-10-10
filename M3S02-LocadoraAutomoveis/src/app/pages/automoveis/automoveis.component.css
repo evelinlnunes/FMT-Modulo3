@@ -1,7 +1,28 @@
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Coloca a barra de pesquisa acima dos cards */
+    align-items: center; /* Centraliza horizontalmente */
     padding: 20px;
+}
+
+.search-container {
+    width: 100%; /* Largura total do container */
+    max-width: 600px; /* Largura máxima para a barra de pesquisa */
+    margin-bottom: 20px; /* Espaçamento abaixo da barra */
+}
+
+input {
+    width: 100%; /* Largura total do input */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho do texto */
+    transition: border-color 0.3s; /* Transição suave para a borda */
+}
+
+input:focus {
+    border-color: #4A90E2; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
 }
 
 ul {
@@ -10,6 +31,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards */
 }
 
 .card-auto {

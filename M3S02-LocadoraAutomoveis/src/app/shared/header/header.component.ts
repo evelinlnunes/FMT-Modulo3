@@ -9,5 +9,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  favoritosCount: number = 0;
+  ngOnInit(): void {
+    this.favoritosCount = JSON.parse(
+      localStorage.getItem('favoritos') || '[]'
+    ).length;
+  }
 }
