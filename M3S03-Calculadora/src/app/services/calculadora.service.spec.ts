@@ -13,4 +13,11 @@ describe('CalculadoraService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('deve adicionar 2 numeros e retornar a resposta correta', () => {
+    expect(service.somar(12, 23)).toBe(35);
+  });
+  it('deve subtrair 2 numeros e retornar a resposta correta', () => {
+    expect(service.subtrair(32, 12)).toBe(10);
+  });
 });
