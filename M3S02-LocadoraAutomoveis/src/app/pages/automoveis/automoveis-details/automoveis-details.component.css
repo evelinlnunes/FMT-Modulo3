@@ -1,0 +1,35 @@
+.automovelDetails-conteiner {
+    max-width: 600px; /* Largura máxima do container */
+    margin: 20px auto; /* Centraliza o container na página */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #fff; /* Fundo branco */
+}
+
+p {
+    margin: 10px 0; /* Margens para os parágrafos */
+    font-size: 1.1em; /* Tamanho do texto */
+}
+
+.img-auto {
+    max-width: 100%; /* Imagem responsiva */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+button {
+    background-color: #4A90E2; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    font-size: 1em; /* Tamanho do texto do botão */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s; /* Transição suave para o fundo */
+}
+
+button:hover {
+    background-color: #357ABD; /* Cor ao passar o mouse */
+}
