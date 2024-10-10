@@ -10,8 +10,8 @@ describe('CalculadoraComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CalculadoraComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CalculadoraComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -27,4 +27,19 @@ describe('CalculadoraComponent', () => {
     component.somar();
     expect(component.result).toBe(32);
   });
+
+  it('deve alterar os valores num1 e num2 no formulário, apertar o botão de soma e retornar resultado correto do cálculo', () => {
+    const spy = spyOn(component, 'somar').and.callThrough();
+    const input1 = fixture.nativeElement.querySelector('#num1');
+    const input2 = fixture.nativeElement.querySelector('#num2');
+    const button = fixture.nativeElement.querySelector('#somarBtn');
+    input1.value = 35;
+    input2.value = 12;
+    input1.dispatchEvent(new Event('input'));
+    input2.dispatchEvent(new Event('input'));
+    button.click();
+    expect(spy).toHaveBeenCalled(); 
+    expect(component.result).toBe(37);
+  });
+
 });
