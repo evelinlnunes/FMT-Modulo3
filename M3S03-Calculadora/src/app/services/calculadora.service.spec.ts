@@ -24,4 +24,8 @@ describe('CalculadoraService', () => {
   it('deve multiplicar 2 numeros e retornar a resposta correta', () => {
     expect(service.multiplicar(64, 3)).toBe(192);
   });
+
+  it('deve dividir 2 numeros e retornar a resposta correta', () => {
+    expect(service.dividir(40, 5)).toBe(8);
+  });
 });
