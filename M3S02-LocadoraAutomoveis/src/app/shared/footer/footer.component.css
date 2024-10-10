@@ -1,0 +1,16 @@
+footer {
+    background-color: #333; /* Cor de fundo do footer */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Espaçamento interno */
+    position: relative; /* Para fixação se necessário */
+}
+
+footer a {
+    color: #FFC107; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}

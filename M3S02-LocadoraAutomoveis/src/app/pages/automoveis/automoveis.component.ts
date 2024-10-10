@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-automoveis',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './automoveis.component.css'
 })
 export class AutomoveisComponent {
+  automoveisList: any = [];
+  router = inject(Router);
 
+  redirectTo(id: number) {
+    this.router.navigate(['/automoveis', id]);
+  }
 }

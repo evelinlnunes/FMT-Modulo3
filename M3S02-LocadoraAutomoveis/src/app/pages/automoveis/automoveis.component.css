@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.card-auto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Largura fixa para os cards */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-auto:hover {
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+.automovel-info {
+    padding: 15px;
+}
+
+.img-auto {
+    max-width: 100%; /* Imagem responsiva */
+    border-radius: 4px;
+}
+
+p {
+    margin: 5px 0; /* Margens para os parágrafos */
+}
+
+p:last-child {
+    font-weight: bold; /* Destaque para a descrição */
+}
