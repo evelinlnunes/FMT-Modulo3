@@ -26,10 +26,12 @@ public class Suggestion {
     @Column(nullable = false, length = 500)
     private String description;
 
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public Suggestion(SuggestionRequest request) {
         BeanUtils.copyProperties(request, this);
     }
+
 }

@@ -1,11 +1,8 @@
 package com.example.SuggestionBox.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
-public class SuggestionRequest {
-    private String title;
-    private String description;
-}
+@Data
+public class SuggestionRequest extends SuggestionAbstract {}
