@@ -33,13 +33,14 @@ describe('CalculadoraComponent', () => {
     const input1 = fixture.nativeElement.querySelector('#num1');
     const input2 = fixture.nativeElement.querySelector('#num2');
     const button = fixture.nativeElement.querySelector('#somarBtn');
+
     input1.value = 35;
     input2.value = 12;
     input1.dispatchEvent(new Event('input'));
     input2.dispatchEvent(new Event('input'));
     button.click();
-    expect(spy).toHaveBeenCalled(); 
-    expect(component.result).toBe(37);
+    expect(spy).toHaveBeenCalled();
+    expect(component.result).toBe(47);
   });
 
 });
