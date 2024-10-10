@@ -3,7 +3,12 @@
         @for (automovel of automoveisList; track automovel.id) {
         <li class="card-auto" (click)="redirectTo(automovel.id)">
             <div class="automovel-info">
-                <p>{{ automovel.name }}</p>
+                <p>
+                    {{ automovel.name }} 
+                    @if (automovel.isFavorito) {
+                        <span style="color: red; font-size: 24px">&#10084;</span>
+                        }
+                </p>
                 <p>
                     <img class="img-auto" [src]="automovel.image" alt="{{ automovel.name }}" />
                 </p>

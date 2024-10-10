@@ -18,7 +18,11 @@ export class AutomoveisComponent {
   ngOnInit(): void {
     this.automoveisService.list().subscribe({
       next: (data: any) => {
+        let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
         this.automoveisList = data;
+        this.automoveisList.forEach((automovel: any) => {
+          automovel.isFavorito = favoritos.includes(automovel.id);
+        });
         console.log(this.automoveisList);
       },
       error: (error) => {
@@ -26,7 +30,7 @@ export class AutomoveisComponent {
       },
     });
   }
-  
+
   redirectTo(id: number) {
     this.router.navigate(['/automoveis', id]);
   }
