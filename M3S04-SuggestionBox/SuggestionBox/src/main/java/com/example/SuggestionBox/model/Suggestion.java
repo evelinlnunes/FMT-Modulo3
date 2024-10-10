@@ -1,11 +1,17 @@
 package com.example.SuggestionBox.model;
 
+import com.example.SuggestionBox.dto.SuggestionRequest;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "suggestions")
+@Getter
+@Setter
 public class Suggestion {
 
     @Id
@@ -21,43 +27,7 @@ public class Suggestion {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public Suggestion(SuggestionRequest request) {
+        BeanUtils.copyProperties(request, this);
     }
 }
