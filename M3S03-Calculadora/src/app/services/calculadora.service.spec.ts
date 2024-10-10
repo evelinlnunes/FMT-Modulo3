@@ -28,4 +28,8 @@ describe('CalculadoraService', () => {
   it('deve dividir 2 numeros e retornar a resposta correta', () => {
     expect(service.dividir(40, 5)).toBe(8);
   });
+
+  it('deve retornar erro "Divisão por zero" ao tentar dividir por 0', () => {
+    expect(() => service.dividir(17, 0)).toThrowError('Não é permitida a divisão por 0');
+  });
 });
