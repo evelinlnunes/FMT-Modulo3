@@ -3,6 +3,7 @@ package com.example.SuggestionBox.model;
 import com.example.SuggestionBox.dto.SuggestionRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @Table(name = "suggestions")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Suggestion {
 
     @Id

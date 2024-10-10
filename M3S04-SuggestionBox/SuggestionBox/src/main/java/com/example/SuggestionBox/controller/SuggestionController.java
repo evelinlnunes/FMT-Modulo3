@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("suggestions")
 @RequiredArgsConstructor
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 public class SuggestionController {
     private final SuggestionService service;
 
-    // CREATE
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public SuggestionResponse create(@RequestBody SuggestionRequest request) {
@@ -23,5 +24,17 @@ public class SuggestionController {
         SuggestionResponse response = service.create(request);
         log.info("POST: /reminder -> End");
         return response;
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<SuggestionResponse> findAll(
+            @RequestParam(defaultValue = "") String title
+    ) {
+        log.info("GET: /reminder -> Begin");
+        List<SuggestionResponse> suggestions = service.findAll(title);
+
+        log.info("GET: /reminder -> End");
+        return suggestions;
     }
 }
