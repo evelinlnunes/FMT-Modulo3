@@ -21,18 +21,14 @@ public class PacienteController {
     }
 
     @PostMapping()
-    public PacienteResponseDTO salvarPaciente(@RequestBody PacienteRequestDTO request,
-                                              //@RequestParam("date")
-                                              @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
+    public PacienteResponseDTO salvarPaciente(@RequestBody PacienteRequestDTO request) {
         return pacienteService.salvarPaciente(request);
-
-
     }
 
     @GetMapping()
     public List<PacienteResponseDTO> listarPacientes() {
         var Pacientes = pacienteService.listarPacientes();
-        if (Pacientes.isEmpty()){
+        if (Pacientes.isEmpty()) {
             return null;
         } else {
             return Pacientes;
@@ -57,8 +53,7 @@ public class PacienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PacienteResponseDTO> update(@PathVariable long id,
-                                                      @RequestBody PacienteRequestDTO request,
+    public ResponseEntity<PacienteResponseDTO> update(@PathVariable long id, @RequestBody PacienteRequestDTO request,
                                                       //@RequestParam("date")
                                                       @DateTimeFormat(pattern = "dd/MM/yyyy") Date date) {
         PacienteResponseDTO paciente = pacienteService.atualizarPaciente(id, request);
@@ -70,6 +65,4 @@ public class PacienteController {
     }
 
 
-
-    
 }
