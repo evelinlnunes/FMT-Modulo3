@@ -1,10 +1,9 @@
 package br.com.exemplo.aula.controllers;
 
-import br.com.exemplo.aula.services.NutricionistaService;
 import br.com.exemplo.aula.controllers.dto.NutricionistaRequestDTO;
 import br.com.exemplo.aula.controllers.dto.NutricionistaResponseDTO;
+import br.com.exemplo.aula.services.NutricionistaService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
