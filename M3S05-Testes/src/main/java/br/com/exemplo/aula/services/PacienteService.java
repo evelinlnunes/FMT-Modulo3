@@ -1,8 +1,8 @@
 package br.com.exemplo.aula.services;
 
-import br.com.exemplo.aula.entities.Paciente;
 import br.com.exemplo.aula.controllers.dto.PacienteRequestDTO;
 import br.com.exemplo.aula.controllers.dto.PacienteResponseDTO;
+import br.com.exemplo.aula.entities.Paciente;
 import br.com.exemplo.aula.repositories.PacienteRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +32,7 @@ public class PacienteService {
         ).collect(Collectors.toList());
     }
 
-    public PacienteResponseDTO buscarPaciente(Long id){
+    public PacienteResponseDTO buscarPaciente(Long id) {
         Paciente paciente = pacienteRepository.findById(id).orElse(null);
         if (paciente != null) {
             return new PacienteResponseDTO(
@@ -60,7 +60,7 @@ public class PacienteService {
         );
     }
 
-    private Paciente mapearRequest(PacienteRequestDTO source){
+    private Paciente mapearRequest(PacienteRequestDTO source) {
         Paciente target = new Paciente();
         target.setNome(source.getNome());
         target.setDataNascimento(source.getDataNascimento());
@@ -93,6 +93,6 @@ public class PacienteService {
     public void removerPaciente(Long id) {
         pacienteRepository.deleteById(id);
     }
-    
-    
+
+
 }
