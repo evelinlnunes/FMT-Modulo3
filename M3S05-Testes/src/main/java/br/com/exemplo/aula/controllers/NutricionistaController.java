@@ -20,8 +20,6 @@ public class NutricionistaController {
         this.nutricionistaService = nutricionistaService;
     }
 
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_NUTRI')")
-//    @PreAuthorize("hasAuthority('SCOPE_NUTRI')")
     @PostMapping()
     public NutricionistaResponseDTO salvarNutricionista(@RequestBody NutricionistaRequestDTO request) {
         return nutricionistaService.salvarNutricionista(request);
