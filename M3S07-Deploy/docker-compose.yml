@@ -1,0 +1,34 @@
+name: m3s07
+
+services:
+  bancodados:
+    image: 'postgres:latest'
+    ports:
+      - 15432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin  # Alterado para POSTGRES_USER
+      - POSTGRES_DB=m3s07
+    networks:
+      - postgres-network
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+
+  app:
+    container_name: hello-world
+    image: evelinnunes/helloworld:1.0
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://bancodados:5432/m3s07
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    driver: bridge
+
+volumes:
+  db-data:
